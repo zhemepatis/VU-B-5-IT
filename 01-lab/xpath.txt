@@ -1,0 +1,7 @@
+//record[1]/music:song[2]/ancestor::record
+//record[1]/music:song[2]/descendant::music:album
+//record[1]/music:song[2]/following-sibling::music:song
+//record[1]/music:song[2]/preceding-sibling::music:song
+//record[1]/music:song[2]/preceding::*
+//record[1]/music:song[2]/following::*
+//record[1]/music:song[2]/attribute::genre
