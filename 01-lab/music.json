@@ -1,45 +1,46 @@
 {
-    "record": {
-      "@type": "12-inch-album",
-      "title": "Britney Spears - ...Baby One More Time - Coloured",
-      "price": {
-        "@currency": "eur",
-        "#text": "34.99"
-      },
-      "song": [
-        {
-          "@genre": "pop",
-          "@order": "A1",
+  "record": {
+    "@type": "12-inch-album",
+    "title": "Britney Spears - ...Baby One More Time - Coloured",
+    "price": {
+      "@currency": "eur",
+      "#text": "34.99"
+    },
+    "quantity": "12",
+    "song": [
+      {
+        "@genre": "pop",
+        "@order": "A1",
+        "title": "...Baby One More Time",
+        "artist": "Britney Spears",
+        "duration": "3:31",
+        "album": {
           "title": "...Baby One More Time",
-          "artist": "Britney Spears",
-          "duation": "3:31",
-          "album": {
-            "title": "...Baby One More Time",
-            "release-date": "1999-01-12"
-          }
-        },
-        {
-          "@genre": "pop",
-          "@order": "A2",
-          "title": "(You Drive Me) Crazy",
-          "artist": "Britney Spears",
-          "duation": "3:18",
-          "album": {
-            "title": "...Baby One More Time",
-            "release-date": "1999-01-12"
-          }
-        },
-        {
-          "@genre": "pop",
-          "@order": "A3",
-          "title": "Sometimes",
-          "artist": "Britney Spears",
-          "duation": "4:05",
-          "album": {
-            "title": "...Baby One More Time",
-            "release-date": "1999-01-12"
-          }
+          "release-date": "1999-01-12"
         }
-      ]
-    }
+      },
+      {
+        "@genre": "pop",
+        "@order": "A2",
+        "title": "(You Drive Me) Crazy",
+        "artist": "Britney Spears",
+        "duration": "3:18",
+        "album": {
+          "title": "...Baby One More Time",
+          "release-date": "1999-01-12"
+        }
+      },
+      {
+        "@genre": "pop",
+        "@order": "A3",
+        "title": "Sometimes",
+        "artist": "Britney Spears",
+        "duration": "4:05",
+        "album": {
+          "title": "...Baby One More Time",
+          "release-date": "1999-01-12"
+        }
+      }
+    ]
   }
+}
