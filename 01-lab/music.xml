@@ -6,11 +6,12 @@
     <record type="12-inch-album">
         <title>Britney Spears - ...Baby One More Time - Coloured</title>
         <price currency="eur">34.99</price>
+        <quantity>12</quantity>
 
         <music:song genre="pop" order="A1">
             <music:title>...Baby One More Time</music:title>
             <music:artist>Britney Spears</music:artist>
-            <music:duation>3:31</music:duation>
+            <music:duration>3:31</music:duration>
 
             <music:album>
                 <music:title>...Baby One More Time</music:title>
@@ -21,7 +22,7 @@
         <music:song genre="pop" order="A2">
             <music:title>(You Drive Me) Crazy</music:title>
             <music:artist>Britney Spears</music:artist>
-            <music:duation>3:18</music:duation>
+            <music:duration>3:18</music:duration>
 
             <music:album>
                 <music:title>...Baby One More Time</music:title>
@@ -32,7 +33,7 @@
         <music:song genre="pop" order="A3">
             <music:title>Sometimes</music:title>
             <music:artist>Britney Spears</music:artist>
-            <music:duation>4:05</music:duation>
+            <music:duration>4:05</music:duration>
 
             <music:album>
                 <music:title>...Baby One More Time</music:title>
