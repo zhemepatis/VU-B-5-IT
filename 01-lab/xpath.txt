@@ -7,9 +7,24 @@
 /descendant::music:song[2]/@genre
 
 2. PREDICATES
-/descendant::music:song[@genre=/descendant::music:song[1]/@genre] - returns all song elements that has the same genre attribute as 1 one
+/descendant::music:song[@genre=/descendant::music:song[1]/@genre]
 
-3. 
+3. COUNT
+count(//text()[normalize-space()]) 
 
 4. LOGICAL OPERATIONS
+/descendant::price < 40
+/descendant::price[1]/number() > 40
+/descendant::music:artist[2]/text() = "Britney Spears"
 
+5. STEPS
+/descendant::music:song[2]/preceding-sibling::music:song/child::music:title
+
+6. LOGICAL OPERATIONS = and != WITH SETS
+/descendant::price = 50
+/descendant::music:artist = "Britney Spears"
+/descendant::music:song = true
+/descendant::music:song[1]/* = /descendant::music:song[2]/*
+
+7. LOGICAL OPERATIONS < and > WITH SETS
+/descendant::price > /descendant::quantity
