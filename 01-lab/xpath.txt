@@ -10,7 +10,7 @@
 /descendant::music:song[@genre=/descendant::music:song[1]/@genre]
 
 3. COUNT
-count(//text()[normalize-space()]) 
+count(//*text()[normalize-space()]) 
 
 4. LOGICAL OPERATIONS
 /descendant::price < 40
@@ -23,7 +23,7 @@ count(//text()[normalize-space()])
 6. LOGICAL OPERATIONS = and != WITH SETS
 /descendant::price = 50
 /descendant::music:artist = "Britney Spears"
-/descendant::music:song = true
+/descendant::music:song = true()
 /descendant::music:song[1]/* = /descendant::music:song[2]/*
 
 7. LOGICAL OPERATIONS < and > WITH SETS
