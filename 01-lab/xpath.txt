@@ -4,18 +4,22 @@
 /descendant::music:song[2]/preceding-sibling::music:song
 /descendant::music:song[2]/preceding::*
 /descendant::music:song[2]/following::*
-/descendant::music:song[2]/@genre
+/descendant::music:song[2]/attribute::genre
 
 2. PREDICATES
 /descendant::music:song[@genre=/descendant::music:song[1]/@genre]
 
 3. COUNT
-count(//*text()[normalize-space()]) 
+count(//*/text()[normalize-space()])
+sum(//price/number())
+
 
 4. LOGICAL OPERATIONS
 /descendant::price < 40
 /descendant::price[1]/number() > 40
 /descendant::music:artist[2]/text() = "Britney Spears"
+/descendant::price + 10
+/descendant::quantity - 4
 
 5. STEPS
 /descendant::music:song[2]/preceding-sibling::music:song/child::music:title
@@ -23,7 +27,7 @@ count(//*text()[normalize-space()])
 6. LOGICAL OPERATIONS = and != WITH SETS
 /descendant::price = 50
 /descendant::music:artist = "Britney Spears"
-/descendant::music:song = true()
+/descendant::music:song/music:title = true()
 /descendant::music:song[1]/* = /descendant::music:song[2]/*
 
 7. LOGICAL OPERATIONS < and > WITH SETS
