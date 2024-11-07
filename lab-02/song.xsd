@@ -5,61 +5,21 @@
     targetNamespace="https://www.example.com/records"
     elementFormDefault="qualified">
 
-    <!-- <xs:element name="store" type="r:store-type"/>
-    <xs:complexType name="store-type">
-        <xs:choice maxOccurs="unbounded">
-            <xs:element name="record" type="r:album-record-type"/>
-            <xs:element name="record" type="r:single-record-type"/>
-        </xs:choice>
-    </xs:complexType> -->
-
-    <!-- RECORD TYPES -->
-    <!-- <xs:complexType name="track-list">
-        <xs:sequence>
-            <xs:element name="track" type="r:track-type"/>
+    <!-- STORE -->
+    <xs:element name="vinyl-record-store" type="r:store"/>
+    <xs:complexType name="store">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="record" type="r:record"/>
         </xs:sequence>
-    </xs:complexType> -->
-
-    <!-- 3.1 - sudetingas tipas, isvestas praplėtimu (extension) is sukurto bazinio tipo  -->
-    <!-- <xs:complexType name="record-meta-type">
-        <xs:sequence>
-            <xs:element name="title" type="r:title-type"/>
-            <xs:element name="price" type="r:price-type"/>
-            <xs:element name="duration" type="xs:duration"/>
-        </xs:sequence>
-    </xs:complexType> -->
-
-    <!-- <xs:complexType name="album-record-type">
-        <xs:complexContent>
-            <xs:extension base="r:record-meta-type">
-                <xs:attribute name="type" type="r:album-type-attr"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType> -->
-
-    <!-- <xs:complexType name="single-record-type">
-        <xs:complexContent>
-            <xs:extension base="r:record-type">
-                <xs:attribute name="type" type="r:single-type-attr"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType> -->
-
-    <!-- <xs:simpleType name="album-type-attr">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="album"/>
-        </xs:restriction>
-    </xs:simpleType>-->
+    </xs:complexType>
 
     <!-- RECORD -->
     <xs:complexType name="record">
         <xs:complexContent>
             <xs:extension base="r:record-meta-data">
-                <xs:sequence maxOccurs="12">
+                <xs:sequence minOccurs="0" maxOccurs="unbounded">
                     <xs:element name="track" type="r:track"/>
                 </xs:sequence>
-
-                <xs:attribute name="type" type="r:type"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -94,13 +54,6 @@
         <xs:restriction base="xs:integer">
             <xs:minInclusive value="0"/>
             <xs:maxInclusive value="200"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="type">
-        <xs:restriction>
-            <xs:enumeration value="LP"/>
-            <xs:enumeration value="12-inch-album"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -156,7 +109,7 @@
             <xs:extension base="r:meta-data">
                 <xs:sequence>
                     <xs:element name="artist" type="r:artist"/>
-                    <xs:element name="duration" type="xs:duration"/>
+                    <xs:element name="duration" type="r:duration"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -188,35 +141,3 @@
     </xs:simpleType>
 
 </xs:schema>
-
-
-<!-- TODO: -->
-    <!-- [X] Paprastas tipas, apribojantis kokį nors Schema standartinį tipą, -->
-        <!-- simpleType -> string -> restriction -->
-        <!-- cia galima su regex kazka -->
-
-    <!-- [X] Prasmingas sąrašo tipas (list type) -->
-        <!-- simpleType -> itemType -> list -->
-
-    <!-- [O] Sudėtingi tipai su paprastu turiniu -->
-        <!-- [O] išvesti apribojimu (restriction) iš jūsų (ne XML Schema) bazinio tipo-->
-            <!-- ComplexType -> SimpleContent -> restriciton -->
-        <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
-            <!-- ComplexType -> SimpleContent -> extension -->
-    
-    <!-- [O] Sudėtingi tipai su sudėtingu turiniu -->
-        <!-- [O] išvesti apribojimu (restriction) iš jūsų bazinio tipo -->
-            <!-- ComplexType -> ComplexContent -> restriction -->
-        <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
-            <!-- ComplexType -> ComplexContent -> extension -->
-
-    <!-- [O] Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį -->
-        <!-- ?? -->
-
-    <!-- [O] Sudėtingas tipas su mišriu turiniu, -->
-        <!-- tsg tekstas ir =ym4 turi ka=kur atsirast -->
-
-    <!-- [O] choice valdymo struktūra, -->
-        <!--  -->
-
-    <!-- [O] Bent viena nuoroda (keyref) į unikalumo ribojimą (unique) arba raktą (key) -->

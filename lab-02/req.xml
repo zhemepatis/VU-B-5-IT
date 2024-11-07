@@ -1,0 +1,29 @@
+<!-- TODO: -->
+    <!-- [X] Paprastas tipas, apribojantis kokį nors Schema standartinį tipą, -->
+        <!-- simpleType -> string -> restriction -->
+        <!-- cia galima su regex kazka -->
+
+    <!-- [X] Prasmingas sąrašo tipas (list type) -->
+        <!-- simpleType -> itemType -> list -->
+
+    <!-- [O] Sudėtingi tipai su paprastu turiniu -->
+        <!-- [O] išvesti apribojimu (restriction) iš jūsų (ne XML Schema) bazinio tipo-->
+            <!-- ComplexType -> SimpleContent -> restriciton -->
+        <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
+            <!-- ComplexType -> SimpleContent -> extension -->
+    
+    <!-- [O] Sudėtingi tipai su sudėtingu turiniu -->
+        <!-- [O] išvesti apribojimu (restriction) iš jūsų bazinio tipo -->
+            <!-- ComplexType -> ComplexContent -> restriction -->
+        <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
+            <!-- ComplexType -> ComplexContent -> extension -->
+
+    <!-- [O] Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį -->
+        <!-- ?? -->
+
+    <!-- [O] Sudėtingas tipas su mišriu turiniu, -->
+        <!-- tsg tekstas ir =ym4 turi ka=kur atsirast -->
+
+    <!-- [O] choice valdymo struktūra, -->
+
+    <!-- [O] Bent viena nuoroda (keyref) į unikalumo ribojimą (unique) arba raktą (key) -->
