@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<m:track 
+<m:record 
     xmlns:m="https://www.example.com/records"
-    genre="pop">
+    type="12-inch-album">
 
-    <m:title>...Baby One More Time</m:title>
-    <m:artist>Britney Spears</m:artist>
-    <m:duration>n75</m:duration>
+    <m:title>Britney Spears - ...Baby One More Time - Coloured</m:title>
+    <m:price currency="eur">34.99</m:price>
+    <m:quantity>12</m:quantity>
 
-    <m:album>
+    <m:track genre="pop" order="A1">
         <m:title>...Baby One More Time</m:title>
-        <m:release-date>1999-01-12</m:release-date>           
-    </m:album>
-</m:track>
+        <m:artist>Britney Spears</m:artist>
+        <m:duration>03:31</m:duration>
+
+        <m:album>
+            <m:title>...Baby One More Time</m:title>
+            <m:release-date>1999-01-12</m:release-date>           
+        </m:album>
+    </m:track>
+
+    <m:track genre="pop" order="A2">
+        <m:title>(You Drive Me) Crazy</m:title>
+        <m:artist>Britney Spears</m:artist>
+        <m:duration>03:18</m:duration>
+
+        <m:album>
+            <m:title>...Baby One More Time</m:title>
+            <m:release-date>1999-01-12</m:release-date>           
+        </m:album>
+    </m:track>
+
+    <m:track genre="pop" order="A3">
+        <m:title>Sometimes</m:title>
+        <m:artist>Britney Spears</m:artist>
+        <m:duration>04:05</m:duration>
+
+        <m:album>
+            <m:title>...Baby One More Time</m:title>
+            <m:release-date>1999-01-12</m:release-date>           
+        </m:album>
+    </m:track>
+
+</m:record>

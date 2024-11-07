@@ -49,22 +49,62 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="album"/>
         </xs:restriction>
+    </xs:simpleType>-->
+
+    <!-- RECORD -->
+    <xs:complexType name="record">
+        <xs:complexContent>
+            <xs:extension base="r:record-meta-data">
+                <xs:sequence maxOccurs="12">
+                    <xs:element name="track" type="r:track"/>
+                </xs:sequence>
+
+                <xs:attribute name="type" type="r:type"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="record-meta-data">
+        <xs:complexContent>
+            <xs:extension base="r:meta-data">
+                <xs:sequence>
+                    <xs:element name="price" type="r:price"/>
+                    <xs:element name="quantity" type="r:quantity"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- 3.2 - sudetingas tipas, paprastas turinys, isvestas praplėtimu (extension) -->
+    <xs:complexType name="price">
+        <xs:simpleContent>
+            <xs:extension base="r:price-decimal">
+                <xs:attribute name="currency"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="price-decimal">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="single-type-attr">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="single"/>
+    <xs:simpleType name="quantity">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="200"/>
         </xs:restriction>
-    </xs:simpleType> -->
+    </xs:simpleType>
 
-    
+    <xs:simpleType name="type">
+        <xs:restriction>
+            <xs:enumeration value="LP"/>
+            <xs:enumeration value="12-inch-album"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    
-
-
-    <!-- TRACK TYPE -->
-    <!-- TRACK TYPE -->
-    <xs:element name="track" type="r:track"/>
+    <!-- TRACK -->    
     <xs:complexType name="track">
         <xs:complexContent>
             <xs:extension base="r:track-meta-data">
@@ -74,6 +114,7 @@
 
                 <!-- 2 - prasmingas saraso tipas -->
                 <xs:attribute name="genre" type="r:genre-list"/>
+                <xs:attribute name="order" type="r:order"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -102,9 +143,14 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- META DATA -->
+    <xs:simpleType name="order">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[AB][1-6]"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <!-- 3.1 - sudetingas tipas, isvestas praplėtimu (extension) is sukurto bazinio tipo  -->
+    <!-- META DATA -->
+    <!-- 4.2 - sudetingas tipas, sudetingas turinys, isvestas praplėtimu (extension) -->
     <xs:complexType name="track-meta-data">
         <xs:complexContent>
             <xs:extension base="r:meta-data">
@@ -155,13 +201,13 @@
     <!-- [O] Sudėtingi tipai su paprastu turiniu -->
         <!-- [O] išvesti apribojimu (restriction) iš jūsų (ne XML Schema) bazinio tipo-->
             <!-- ComplexType -> SimpleContent -> restriciton -->
-        <!-- [O] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
+        <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
             <!-- ComplexType -> SimpleContent -> extension -->
     
     <!-- [O] Sudėtingi tipai su sudėtingu turiniu -->
         <!-- [O] išvesti apribojimu (restriction) iš jūsų bazinio tipo -->
             <!-- ComplexType -> ComplexContent -> restriction -->
-        <!-- [O] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
+        <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
             <!-- ComplexType -> ComplexContent -> extension -->
 
     <!-- [O] Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį -->
