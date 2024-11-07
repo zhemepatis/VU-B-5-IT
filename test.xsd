@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:r="https://www.example.com/records"  
+    targetNamespace="https://www.example.com/records"
+    elementFormDefault="qualified"> 
+
+    <!-- TRACK TYPE -->
+    <xs:element name="track" type="r:track"/>
+    <xs:complexType name="track">
+        <xs:complexContent>
+            <xs:extension base="r:track-meta-data">
+                <xs:sequence>
+                    <xs:element name="album" type="r:music-album"/>
+                </xs:sequence>
+
+                <!-- 2 - prasmingas saraso tipas -->
+                <xs:attribute name="genre" type="r:genre-list"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="music-album">
+        <xs:complexContent>
+            <xs:extension base="r:meta-data">
+                <xs:sequence>
+                    <xs:element name="release-date" type="xs:date"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="genre-list">
+        <xs:list itemType="r:genre"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="genre">
+        <!-- 1 - paprastas tipas, apribojantis kokį nors Schema standartinį tipą -->
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pop"/>
+            <xs:enumeration value="jazz"/>
+            <xs:enumeration value="funk"/>
+            <xs:enumeration value="classical"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- META DATA -->
+
+    <!-- 3.1 - sudetingas tipas, isvestas praplėtimu (extension) is sukurto bazinio tipo  -->
+    <xs:complexType name="track-meta-data">
+        <xs:complexContent>
+            <xs:extension base="r:meta-data">
+                <xs:sequence>
+                    <xs:element name="artist" type="r:artist"/>
+                    <xs:element name="duration" type="r:duration"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="artist">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="meta-data">
+        <xs:sequence>
+            <xs:element name="title" type="r:title-type"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="duration">
+        <xs:restriction base="xs:string">
+            <xs:length value="5"/>
+            <xs:pattern value="[0-9]{2}:[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="title-type">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

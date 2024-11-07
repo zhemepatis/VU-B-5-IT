@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<vinyl-record-store xmlns="https://www.example.com/vinyl-record-store" 
+                    xmlns:m="http://www.example.com/m"
+                    file="schema.xml">
+
+    <record type="12-inch-album">
+        <title>Britney Spears - ...Baby One More Time - Coloured</title>
+        <price currency="eur">34.99</price>
+        <quantity>12</quantity>
+
+        <m:song genre="pop" order="A1">
+            <m:title>...Baby One More Time</m:title>
+            <m:artist>Britney Spears</m:artist>
+            <m:duration>3:31</m:duration>
+
+            <m:album>
+                <m:title>...Baby One More Time</m:title>
+                <m:release-date>1999-01-12</m:release-date>           
+            </m:album>
+        </m:song>
+
+        <m:song genre="pop" order="A2">
+            <m:title>(You Drive Me) Crazy</m:title>
+            <m:artist>Britney Spears</m:artist>
+            <m:duration>3:18</m:duration>
+
+            <m:album>
+                <m:title>...Baby One More Time</m:title>
+                <m:release-date>1999-01-12</m:release-date>           
+            </m:album>
+        </m:song>
+
+        <m:song genre="pop" order="A3">
+            <m:title>Sometimes</m:title>
+            <m:artist>Britney Spears</m:artist>
+            <m:duration>4:05</m:duration>
+
+            <m:album>
+                <m:title>...Baby One More Time</m:title>
+                <m:release-date>1999-01-12</m:release-date>           
+            </m:album>
+        </m:song>
+    </record>
+
+</vinyl-record-store>

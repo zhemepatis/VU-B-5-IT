@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m:track 
+    xmlns:m="https://www.example.com/records"
+    genre="pop">
+
+    <m:title>...Baby One More Time</m:title>
+    <m:artist>Britney Spears</m:artist>
+    <m:duration>n75</m:duration>
+
+    <m:album>
+        <m:title>...Baby One More Time</m:title>
+        <m:release-date>1999-01-12</m:release-date>           
+    </m:album>
+</m:track>
