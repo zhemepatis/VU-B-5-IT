@@ -2,15 +2,14 @@
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns:r="https://www.example.com/records" 
-    targetNamespace="https://www.example.com/records"
-    elementFormDefault="unqualified">
+    targetNamespace="https://www.example.com/records">
 
     <xs:element name="store" type="r:store"/>
     <xs:complexType name="store">
-        <xs:all>
+        <xs:sequence>
             <xs:element name="record-list" type="r:record-list"/>
             <xs:element name="song-list" type="r:song-list"/>
-        </xs:all>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="record-list">
@@ -21,7 +20,7 @@
 
     <xs:complexType name="song-list">
         <xs:sequence>
-            <xs:element name="song" type="r:song"/>
+            <xs:element name="song" type="r:song" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -37,8 +36,6 @@
                         <xs:element name="album-track-list" type="r:album-track-list"/>
                     </xs:choice>
                 </xs:sequence>
-                <xs:attribute name="song-id" type="r:song-id"/>
-                <xs:attribute name="order" type="r:order"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -71,6 +68,7 @@
 
     <xs:complexType name="track">
         <xs:attribute name="song-id" type="r:song-id"/>
+        <!-- <xs:attribute name="order" type="r:order"/> -->
     </xs:complexType>
 
     <xs:simpleType name="order">

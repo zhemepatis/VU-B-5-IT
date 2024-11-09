@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<store xmlns="https://www.example.com/records">    
+<store xmlns:r="https://www.example.com/records">    
     <record-list>
         <record issue="issue001">
             <title>Britney Spears - ...Baby One More Time - Coloured</title>

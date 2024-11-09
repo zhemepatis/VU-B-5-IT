@@ -23,6 +23,6 @@
     <!-- [O] Sudėtingas tipas su mišriu turiniu, -->
         <!-- tsg tekstas ir =ym4 turi ka=kur atsirast -->
 
-    <!-- [O] choice valdymo struktūra, -->
+    <!-- [X] choice valdymo struktūra, -->
 
     <!-- [X] Bent viena nuoroda (keyref) į unikalumo ribojimą (unique) arba raktą (key) -->

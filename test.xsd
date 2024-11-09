@@ -3,7 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:r="https://www.example.com/records"  
     targetNamespace="https://www.example.com/records"
-    elementFormDefault="qualified">
+    elementFormDefault="unqualified">
 
     <!-- RECORD -->
     <xs:element name="record" type="r:record"/>
