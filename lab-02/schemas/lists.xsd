@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:r="https://www.example.com/records" 
+    targetNamespace="https://www.example.com/records">
+
+    <!-- Including other parts of schema -->
+    <xs:include schemaLocation="record.xsd"/>
+    <xs:include schemaLocation="song.xsd"/>
+
+    <!-- Definitions -->
+    <!-- <xs:complexType name="track-list">
+        <xs:sequence>
+            <xs:element name="track" type="r:track" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType> -->
+
+    <xs:complexType name="record-list">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="single-record" type="r:single-record"/> 
+            <xs:element name="album-record" type="r:album-record"/> 
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="song-list">
+        <xs:sequence>
+            <xs:element name="song" type="r:song"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

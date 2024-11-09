@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:r="https://www.example.com/records" 
+    targetNamespace="https://www.example.com/records">
+
+    <!-- Including other parts of schema -->
+    <xs:include schemaLocation="lists.xsd"/>
+
+    <!-- Definitions -->
+    <xs:element name="store" type="r:store" />
+    <xs:complexType name="store">
+        <xs:sequence>
+            <xs:element name="record-list" type="r:record-list"/>
+            <xs:element name="song-list" type="r:song-list"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

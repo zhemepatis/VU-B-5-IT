@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:r="https://www.example.com/records"  
+    targetNamespace="https://www.example.com/records"
+    elementFormDefault="qualified">
+
+    <!-- Including other parts of schema -->
+    <xs:include schemaLocation="core.xsd"/>
+
+    <!-- Definitions -->
+    <xs:complexType name="meta-data">
+        <xs:sequence>
+            <xs:element name="title" type="r:title-type"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

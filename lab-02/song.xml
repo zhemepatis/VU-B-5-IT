@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<store xmlns="https://www.example.com/records">    
+    <record-list>
+        <record issue="issue001">
+            <title>Britney Spears - ...Baby One More Time - Coloured</title>
+            <price currency="eur">34.99</price>
+            <quantity>12</quantity>
+    
+            <single-track-list>
+                <track song-id="s001"/>
+                <track song-id="s002"/>
+            </single-track-list>
+        </record>
+    </record-list>
 
-<m:vinyl-record-store xmlns:m="https://www.example.com/records">
+    <song-list>
+        <song genre="pop">
+            <title>...Baby One More Time</title>
+            <id>s021</id>
+            <artist>Britney Spears</artist>
+            <duration>03:31</duration>
 
-    <m:record>
-        <m:title>Britney Spears - ...Baby One More Time - Coloured</m:title>
-        <m:price currency="eur">34.99</m:price>
-        <m:quanity>12</m:quanity>
+            <album>
+                <title>...Baby One More Time</title>
+                <release-date>1999-01-12</release-date>           
+            </album>
+        </song>
 
-        <m:track genre="pop" order="A1">
-            <m:title>...Baby One More Time</m:title>
-            <m:artist>Britney Spears</m:artist>
-            <m:duration>03:31</m:duration>
+        <song genre="pop">
+            <title>(You Drive Me) Crazy</title>
+            <id>s002</id>
+            <artist>Britney Spears</artist>
+            <duration>03:18</duration>
 
-            <m:album>
-                <m:title>...Baby One More Time</m:title>
-                <m:release-date>1999-01-12</m:release-date>           
-            </m:album>
-        </m:track>
+            <album>
+                <title>...Baby One More Time</title>
+                <release-date>1999-01-12</release-date>           
+            </album>
+        </song>
 
-        <m:track genre="pop" order="A2">
-            <m:title>(You Drive Me) Crazy</m:title>
-            <m:artist>Britney Spears</m:artist>
-            <m:duration>03:18</m:duration>
+        <song genre="pop">
+            <title>Sometimes</title>
+            <id>s003</id>
+            <artist>Britney Spears</artist>
+            <duration>04:05</duration>
 
-            <m:album>
-                <m:title>...Baby One More Time</m:title>
-                <m:release-date>1999-01-12</m:release-date>           
-            </m:album>
-        </m:track>
+            <album>
+                <title>...Baby One More Time</title>
+                <release-date>1999-01-12</release-date>           
+            </album>
+        </song>
+    </song-list>
 
-        <m:track genre="pop" order="A3">
-            <m:title>Sometimes</m:title>
-            <m:artist>Britney Spears</m:artist>
-            <m:duration>04:05</m:duration>
-
-            <m:album>
-                <m:title>...Baby One More Time</m:title>
-                <m:release-date>1999-01-12</m:release-date>           
-            </m:album>
-        </m:track>
-    </m:record>
-
-</m:vinyl-record-store>
+</store>

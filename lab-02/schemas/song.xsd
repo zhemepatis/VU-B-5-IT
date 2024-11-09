@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:r="https://www.example.com/records"  
+    targetNamespace="https://www.example.com/records"
+    elementFormDefault="qualified">
+
+    <!-- Including other parts of schema -->
+    <xs:include schemaLocation="meta-data.xsd"/>
+    <xs:include schemaLocation="record.xsd"/>
+
+    <!-- Definitions -->
+    <xs:complexType name="song">
+        <xs:complexContent>
+            <xs:extension base="r:meta-data">
+                <xs:sequence>
+                    <xs:element name="id" type="r:song-id"/>
+                    <xs:element name="artist" type="xs:string"/>
+                    <xs:element name="duration" type="r:duration"/>
+                    <xs:element name="album" type="r:music-album"/>
+                </xs:sequence>
+                <xs:attribute name="genre" type="r:genre-list"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="music-album">
+        <xs:complexContent>
+            <xs:extension base="r:meta-data">
+                <xs:sequence>
+                    <xs:element name="release-date" type="xs:date"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="song-id">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="duration">
+        <xs:restriction base="xs:string">
+            <xs:length value="5"/>
+            <xs:pattern value="[0-9]{2}:[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="genre-list">
+        <!-- 2 - prasmingas sąrašo tipas -->
+        <xs:list itemType="r:genre"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="genre">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pop"/>
+            <xs:enumeration value="jazz"/>
+            <xs:enumeration value="funk"/>
+            <xs:enumeration value="classical"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -12,18 +12,17 @@
         <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
             <!-- ComplexType -> SimpleContent -> extension -->
     
-    <!-- [O] Sudėtingi tipai su sudėtingu turiniu -->
-        <!-- [O] išvesti apribojimu (restriction) iš jūsų bazinio tipo -->
+    <!-- [X] Sudėtingi tipai su sudėtingu turiniu -->
+        <!-- [X] išvesti apribojimu (restriction) iš jūsų bazinio tipo -->
             <!-- ComplexType -> ComplexContent -> restriction -->
         <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
             <!-- ComplexType -> ComplexContent -> extension -->
 
     <!-- [O] Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį -->
-        <!-- ?? -->
 
     <!-- [O] Sudėtingas tipas su mišriu turiniu, -->
         <!-- tsg tekstas ir =ym4 turi ka=kur atsirast -->
 
     <!-- [O] choice valdymo struktūra, -->
 
-    <!-- [O] Bent viena nuoroda (keyref) į unikalumo ribojimą (unique) arba raktą (key) -->
+    <!-- [X] Bent viena nuoroda (keyref) į unikalumo ribojimą (unique) arba raktą (key) -->

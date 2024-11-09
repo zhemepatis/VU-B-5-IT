@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:r="https://www.example.com/records" 
+    targetNamespace="https://www.example.com/records">
+
+    <!-- Including other parts of schema -->
+    <xs:include schemaLocation="song.xsd"/>
+
+    <!-- Definitions -->
+    <xs:simpleType name="quantity">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="price">
+        <!-- 3.2 - isvesti sudetinga tipa, naudojant extension iš sukruto tipo -->
+        <xs:simpleContent>
+            <xs:extension base="r:price-decimal">
+                <xs:attribute name="currency" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="price-decimal">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="title-type">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>
