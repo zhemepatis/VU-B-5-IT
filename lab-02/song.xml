@@ -7,47 +7,27 @@
             <price currency="eur">34.99</price>
             <quantity>12</quantity>
             <single-track-list>
-                <track song-id="s001" order="A1"/>
-                <track song-id="s002" order="A2"/>
+                <track song-id="s0001" order="A1"/>
+                <track song-id="s0003" order="A2"/>
             </single-track-list>
-        </record>
-
-        <record>
-            <title>Britney Spears - ...Baby One More Time - Coloured</title>
-            <price currency="eur">34.99</price>
-            <quantity>12</quantity>
-            <album-track-list>
-                <track song-id="s001" order="A1"/>
-                <track song-id="s002" order="A2"/>
-                <track song-id="s001" order="A3"/>
-                <track song-id="s002" order="A4"/>
-                <track song-id="s001" order="A5"/>
-                <track song-id="s002" order="A6"/>
-                <track song-id="s001" order="B1"/>
-                <track song-id="s002" order="B2"/>
-                <track song-id="s001" order="B3"/>
-                <track song-id="s002" order="B4"/>
-                <track song-id="s001" order="B5"/>
-                <track song-id="s002" order="B6"/>
-            </album-track-list>
         </record>
     </record-list>
 
     <song-list>
         <song genre="pop">
             <title>...Baby One More Time</title>
-            <id>s001</id>
+            <id>s0001</id>
             <artist>Britney Spears</artist>
             <duration>03:31</duration>
             <album>
-                <title>...Baby One More Time</title>
+                <title>...Baby One More Time <edition>(Deluxe edition)</edition></title>
                 <release-date>1999-01-12</release-date>           
             </album>
         </song>
 
         <song genre="pop">
             <title>(You Drive Me) Crazy</title>
-            <id>s002</id>
+            <id>s0000</id>
             <artist>Britney Spears</artist>
             <duration>03:18</duration>
             <album>
@@ -58,7 +38,7 @@
 
         <song genre="pop">
             <title>Sometimes</title>
-            <id>s003</id>
+            <id>s0003</id>
             <artist>Britney Spears</artist>
             <duration>04:05</duration>
             <album>
