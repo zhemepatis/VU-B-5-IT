@@ -18,7 +18,7 @@
         <!-- [X] išvesti praplėtimu (extension) iš jūsų bazinio tipo -->
             <!-- ComplexType -> ComplexContent -> extension -->
 
-    <!-- [O] Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį -->
+    <!-- [X] Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį -->
 
     <!-- [O] Sudėtingas tipas su mišriu turiniu, -->
         <!-- tsg tekstas ir =ym4 turi ka=kur atsirast -->
