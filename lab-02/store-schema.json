@@ -60,6 +60,7 @@
       "type": "object",
       "properties": {
         "value": {
+          "type": "number",
           "minimum": 0
         },
         "@currency": { "type": "string" }
@@ -110,10 +111,13 @@
     "album-meta-data": {
       "type": "object",
       "properties": {
-        "title": { "$ref": "#/definitions/title" },
         "release-date": { "$ref": "#/definitions/date" }
       },
-      "required": ["title", "release-date"]
+      "required": ["title", "release-date"],
+      "anyOf": [
+        { "$ref": "#/definitions/title" },
+        { "$ref": "#/definitions/extended-title" }
+      ]
     },
 
     "id": {
@@ -123,9 +127,23 @@
       "maxLength": 5
     },
 
+    "extended-title": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/title" },
+        "edition": { "$ref": "#/definitions/edition" }
+      },
+      "required": ["title", "edition"]
+    },
+
     "title": {
       "type": "string",
       "maxLength": 50
+    },
+
+    "edition": {
+      "type": "string",
+      "maxLength": 15
     },
 
     "duration": {
@@ -146,6 +164,5 @@
       "type": "string",
       "format": "date"
     }
-
   }
 }  
