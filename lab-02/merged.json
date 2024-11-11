@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft-01/schema",
+  
+  "type": "object",
+  "properties": {
+    "record-list": { 
+      "type": "array",
+      "items": [{ "$ref": "#/definitions/record" }]
+    },
+    "song-list": {
+      "type": "array",
+      "items": [{ "$ref": "#/definitions/song" }]
+    }
+  },
+  "required": ["record-list", "song-list"],
+
+  "definitions": {
+    "record":{
+      "type": "object",
+      "properties": {
+        "single-track-list": { "$ref": "#/definitions/single-track-list" },
+        "album-track-list": { "$ref": "#/definitions/album-track-list" }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/record-meta-data" },
+        {      
+          "oneOf": [
+            { "required": ["single-track-list"] },
+            { "required": ["album-track-list"] }
+          ]
+        }
+      ]
+    },
+
+    "record-meta-data": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/title" },
+        "price": { "$ref": "#/definitions/price" },
+        "quantity": {"$ref": "#/definitions/quantity" }
+      },
+      "required": ["title", "price", "quantity"]
+    },
+
+    "single-track-list": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/track" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+
+    "album-track-list": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/track" },
+      "minItems": 12,
+      "maxItems": 12
+    },
+
+    "price": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "minimum": 0
+        },
+        "@currency": { "type": "string" }
+      },
+      "required": ["value", "@currency"]
+    },
+
+    "quantity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 200
+    },
+
+    "track": {
+      "type": "object",
+      "properties": {
+        "@song-id": { "$ref": "#/definitions/id" },
+        "@order": { "$ref": "#/definitions/order" }
+      },
+      "required": ["@song-id", "@order"]
+    },
+
+    "order": {
+      "type": "string",
+      "pattern": "^[AB][1-6]$"
+    },
+
+    "song":{
+      "type": "object",
+      "properties": {
+        "album": { "$ref": "#/definitions/album-meta-data" }
+      }
+    },
+
+    "song-meta-data": {
+      "type": "object",
+      "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "title": { "$ref": "#/definitions/title" },
+          "artist": { "type": "string" },
+          "duration": { "$ref": "#/definitions/duration" },
+
+          "@genre": { "$ref": "#/definitions/genre-list" }
+      },
+      "required": ["id", "title", "artist", "duration", "@genre"]
+    },
+
+    "album-meta-data": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/title" },
+        "release-date": { "$ref": "#/definitions/date" }
+      },
+      "required": ["title", "release-date"]
+    },
+
+    "id": {
+      "type": "string",
+      "pattern": "^s[0-9]+$",
+      "minLength": 5,
+      "maxLength": 5
+    },
+
+    "title": {
+      "type": "string",
+      "maxLength": 50
+    },
+
+    "duration": {
+      "type": "string",
+      "pattern": "^[0-9]{2}:[0-9]{2}$"
+    },
+
+    "genre-list": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/genre" }
+    },
+    "genre": {
+      "type": "string",
+      "enum": ["pop", "jazz", "funk", "classical"]
+    },
+
+    "date": { 
+      "type": "string",
+      "format": "date"
+    }
+
+  }
+}  

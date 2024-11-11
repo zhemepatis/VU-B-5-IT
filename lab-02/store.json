@@ -1,0 +1,58 @@
+{
+  "record-list": [
+    {
+      "title": "Britney Spears - ...Baby One More Time - Coloured",
+      "price": {
+        "value": 34.99,
+        "@currency": "eur"
+      },
+      "quantity": 12,
+      "single-track-list": [
+        {
+          "@song-id": "s0001",
+          "@order": "A1"
+        },
+        {
+          "@song-id": "s0002",
+          "@order": "B1"
+        }
+      ]
+    }
+  ],
+  "song-list": [
+    {
+      "@genre": ["pop"],
+      "title": "...Baby One More Time",
+      "id": "s0001",
+      "artist": "Britney Spears",
+      "duration": "03:31",
+      "album": {
+        "title": "...Baby One More Time",
+        "edition": "Deluxe",
+        "release-date": "1999-01-12"
+      }
+    },
+    {
+      "@genre": ["pop"],
+      "title": "(You Drive Me) Crazy",
+      "id": "s0002",
+      "artist": "Britney Spears",
+      "duration": "03:18",
+      "album": {
+        "title": "...Baby One More Time",
+        "release-date": "1999-01-12"
+      }
+    },
+    {
+      "@genre": ["pop"],
+      "title": "Sometimes",
+      "id": "s0003",
+      "artist": "Britney Spears",
+      "duration": "04:05",
+      "album": {
+        "title": "...Baby One More Time",
+        "release-date": "1999-01-12"
+      }
+    }
+  ]
+}
