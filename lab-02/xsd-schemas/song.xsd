@@ -17,26 +17,23 @@
                     <xs:element name="id" type="r:song-id"/>
                     <xs:element name="artist" type="xs:string"/>
                     <xs:element name="duration" type="r:duration"/>
-                    <xs:element name="album" type="r:music-album"/>
+                    <xs:element name="album" type="r:album-meta-data"/>
                 </xs:sequence>
+                
                 <xs:attribute name="genre" type="r:genre-list"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="music-album">
-        <xs:complexContent>
-            <xs:extension base="r:meta-data">
-                <xs:sequence>
-                    <xs:element name="release-date" type="xs:date"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
+    <xs:simpleType name="id">
+        <xs:restriction base="xs:string">
+            <xs:length value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:simpleType name="song-id">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:pattern value="s[0-9]+"/>
         </xs:restriction>
     </xs:simpleType>
 

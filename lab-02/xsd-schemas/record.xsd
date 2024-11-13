@@ -11,59 +11,32 @@
 
     <!-- Definitions -->
     <xs:complexType name="record">
-        <!-- 4.2 - isvesti sudetinga tipa, naudojant extension iš sukruto tipo -->
         <xs:complexContent>
+            <!-- 4.2 - sudėtingas tipas, sudėtingas turinys, išvestas su restriction -->
             <xs:extension base="r:meta-data">
                 <xs:sequence>
                     <xs:element name="price" type="r:price"/>
                     <xs:element name="quantity" type="r:quantity"/>
-                    <xs:element name="track" type="r:track" minOccurs="2" maxOccurs="unbounded"/>
-                </xs:sequence>
-                <xs:attribute name="song-id" type="r:song-id"/>
-                <xs:attribute name="order" type="r:order"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
 
-    <xs:complexType name="single-record">
-        <!-- 4.2 - isvesti sudetinga tipa, naudojant extension iš sukruto tipo -->
-        <xs:complexContent>
-            <xs:extension base="r:meta-data">
-                <xs:sequence>
-                    <xs:element name="price" type="r:price"/>
-                    <xs:element name="quantity" type="r:quantity"/>
-                    <xs:element name="track" type="r:track" maxOccurs="6"/>
+                    <!-- 7 - nuoroda (keyref) į raktą (key) -->
+                    <xs:choice>
+                        <xs:element name="single-track-list" type="r:single-track-list"/>
+                        <xs:element name="album-track-list" type="r:album-track-list"/>
+                    </xs:choice>
                 </xs:sequence>
-                <xs:attribute name="song-id" type="r:song-id"/>
-                <xs:attribute name="order" type="r:order"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="album-record">
-        <!-- 4.2 - isvesti sudetinga tipa, naudojant extension iš sukruto tipo -->
-        <xs:complexContent>
-            <xs:extension base="r:meta-data">
-                <xs:sequence>
-                    <xs:element name="price" type="r:price"/>
-                    <xs:element name="quantity" type="r:quantity"/>
-                    <xs:element name="track" type="r:track" maxOccurs="12"/>
-                </xs:sequence>
-                <xs:attribute name="song-id" type="r:song-id"/>
-                <xs:attribute name="order" type="r:order"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="track">
         <xs:attribute name="song-id" type="r:song-id"/>
+        <xs:attribute name="order" type="r:order"/>
     </xs:complexType>
 
     <xs:simpleType name="order">
-        <!-- 1 - paprastas tipas, apribojantis Schema standartinį tipą -->
         <xs:restriction base="xs:string">
             <xs:pattern value="[AB][1-6]"/>
         </xs:restriction>
-    </xs:simpleType> 
+    </xs:simpleType>
 
 </xs:schema>

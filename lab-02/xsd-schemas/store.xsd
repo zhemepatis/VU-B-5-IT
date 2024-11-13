@@ -8,7 +8,18 @@
     <xs:include schemaLocation="lists.xsd"/>
 
     <!-- Definitions -->
-    <xs:element name="store" type="r:store" />
+    <xs:element name="store" type="r:store">
+        <xs:key name="song-key">
+            <xs:selector xpath="r:song-list/r:song"/>
+            <xs:field xpath="r:id"/>
+        </xs:key>
+        
+        <xs:keyref name="song-ref" refer="r:song-key">
+            <xs:selector xpath="r:record-list/r:record/r:single-track-list/r:track | r:record-list/r:record/r:album-track-list/r:track"/>
+            <xs:field xpath="@song-id"/>
+        </xs:keyref>
+    </xs:element>
+
     <xs:complexType name="store">
         <xs:sequence>
             <xs:element name="record-list" type="r:record-list"/>

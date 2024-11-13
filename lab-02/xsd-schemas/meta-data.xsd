@@ -5,14 +5,51 @@
     targetNamespace="https://www.example.com/records"
     elementFormDefault="qualified">
 
-    <!-- Including other parts of schema -->
-    <xs:include schemaLocation="core.xsd"/>
-
     <!-- Definitions -->
     <xs:complexType name="meta-data">
         <xs:sequence>
-            <xs:element name="title" type="r:title-type"/>
+            <xs:element name="title" type="r:title"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:complexType name="album-meta-data">
+        <xs:sequence>
+            <xs:element name="title" type="r:album-title"/>
+            <xs:element name="release-date" type="xs:date"/>    
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="title">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="album-title" mixed="true">
+        <xs:sequence>
+            <xs:element name="edition" type="r:title" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="quantity">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="price">
+        <xs:simpleContent>
+            <xs:extension base="r:price-decimal">
+                <xs:attribute name="currency" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="price-decimal">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>

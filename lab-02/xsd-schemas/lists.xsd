@@ -9,23 +9,43 @@
     <xs:include schemaLocation="song.xsd"/>
 
     <!-- Definitions -->
-    <!-- <xs:complexType name="track-list">
-        <xs:sequence>
-            <xs:element name="track" type="r:track" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType> -->
-
     <xs:complexType name="record-list">
-        <xs:choice maxOccurs="unbounded">
-            <xs:element name="single-record" type="r:single-record"/> 
-            <xs:element name="album-record" type="r:album-record"/> 
-        </xs:choice>
+        <xs:sequence>
+            <xs:element name="record" type="r:record" maxOccurs="unbounded"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="song-list">
         <xs:sequence>
-            <xs:element name="song" type="r:song"/>
+            <xs:element name="song" type="r:song" maxOccurs="unbounded"/>
         </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="track-list">
+        <xs:sequence>
+            <xs:element name="track" type="r:track" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="single-track-list">
+        <xs:complexContent>
+            <!-- 4.1 - sudėtingas tipas, sudėtingas turinys, išvestas su extension -->
+            <xs:restriction base="r:track-list">
+                <xs:sequence>
+                    <xs:element name="track" type="r:track" minOccurs="2" maxOccurs="2"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="album-track-list">
+        <xs:complexContent>
+            <xs:restriction base="r:track-list">
+                <xs:sequence>
+                    <xs:element name="track" type="r:track" minOccurs="12" maxOccurs="12"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
     </xs:complexType>
 
 </xs:schema>
