@@ -1,0 +1,22 @@
+#request-form {
+    display: flex;
+    flex-direction: column;
+
+    width: 30rem;
+}
+
+#request-form > .form-group {
+    display: inherit;
+    flex-direction: inherit;
+
+    margin-bottom: 0.8rem;
+}
+
+#request-form textarea {
+    min-width: 30rem;
+    max-width: 30rem;
+}
+
+[required] {
+    background-color: #ff000021;
+}

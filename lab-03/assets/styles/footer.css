@@ -1,0 +1,14 @@
+ul {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+footer {
+    background-color: grey;
+}
+
+.about-details {
+    text-align: center;
+}
