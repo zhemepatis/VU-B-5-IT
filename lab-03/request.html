@@ -13,18 +13,19 @@
     <body>
         <form id="request-form" action="post">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name">
+                <label for="request-name">Name</label>
+                <input id="request-name" type="text" name="name">
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" required>
+                <label for="request-email">Email</label>
+                <input id="request-email" type="email" name="email" required>
             </div>
 
             <div class="form-group">
-                <label for="gender">Gender</label>
-                <select name="gender" required>
+                <label for="request-gender">Gender</label>
+                <select id="request-gender" name="gender" required>
+                    <option value="" selected>Choose gender</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                     <option value="nd">Prefer not to say</option>
@@ -32,18 +33,18 @@
             </div>
 
             <div class="form-group">
-                <label for="request">Request</label>
-                <textarea name="request" required></textarea>
+                <label for="request-text">Request</label>
+                <textarea id="request-text" name="request" required></textarea>
             </div>
 
             <div class="form-group">
                 <div class="checkbox-group">
-                    <input type="checkbox" name="policies" required/>
-                    <label for="policies">By marking this checkbox you accept our policies.</label>    
+                    <input id="request-policies" type="checkbox" name="policies" required>
+                    <label for="request-policies">By marking this checkbox you accept our policies.</label>    
                 </div>
             </div>
 
-            <input value="Request" type="submit"/>
+            <input value="Request" type="submit">
         </form>
     </body>
 </html>
