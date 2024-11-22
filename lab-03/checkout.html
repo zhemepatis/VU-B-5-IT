@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Importing google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Limelight&display=swap" rel="stylesheet">
+
+        <!-- Importing custom styles -->
+        <link rel="stylesheet" href="assets/styles/main.css">
+        <link rel="stylesheet" href="assets/styles/navbar.css">
+        <link rel="stylesheet" href="assets/styles/checkout.css">
+        <link rel="stylesheet" href="assets/styles/footer.css">
+        
+        <title>Vinyl records store</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Vinyl records store</h1>
+            <nav>
+                <a href="file:///home/rink/repos/VU-B-5-IT/lab-03/home.html">Home</a>
+                <a href="file:///home/rink/repos/VU-B-5-IT/lab-03/about-vinyls.html">About</a>
+                <a href="/contacts">Contacts</a>
+                <a href="file:///home/rink/repos/VU-B-5-IT/lab-03/request.html">Request</a>
+            </nav>
+        </header>
+
+        <div class="checkout-container">
+            <section class="cart-items-section">
+                <h2>Cart items</h2>
+    
+                <article>
+                    <img src="assets/img/hybrid-theory-vinyl.webp" alt="Hybrid Theory vinyl">
+    
+                    <div class="record-details">
+                        <h3>Linkin Park - Hybrid theory</h3>
+                        <p>Quantity: 6</p>
+                        <p>Price: 39.99 eur</p>
+                    </div>
+                </article>
+    
+                <article>
+                    <img src="assets/img/meteora-vinyl.webp" alt="Meteora vinyl">
+    
+                    <div class="record-details">
+                        <h3>Linkin Park - Meteora</h3>
+                        <p>Quantity: 12</p>
+                        <p>Price: 39.99 eur</p>
+                    </div>
+                </article>
+            </section>
+
+            <hr>
+    
+            <section class="invoice-section">
+                <h2>Checkout</h2>
+                <div class="invoice-details">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Album Title</th>
+                                <th>Quantity</th>
+                                <th>Unit Price (EUR)</th>
+                                <th>Total (EUR)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Linkin Park - Hybrid Theory</td>
+                                <td>6</td>
+                                <td>39.99 €</td>
+                                <td>239.94 €</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Linkin Park - Meteora</td>
+                                <td>12</td>
+                                <td>39.99 €</td>
+                                <td>479.88 €</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="4">Subtotal</td>
+                                <td>719.82 €</td>
+                            </tr>
+                            <tr>
+                                <th colspan="4">Tax (8%)</td>
+                                <td>57.59 €</td>
+                            </tr>
+                            <tr>
+                                <th colspan="4">Total</td>
+                                <td>777.41 €</td>
+                            </tr>
+                        </tfoot>
+                    </table>                    
+                    
+                </div>
+                <div class="proceed-btn-container">
+                    <button>Proceed to checkout</button>
+                </div>
+            </section>
+        </div>
+    </body>
+
+    <footer>
+        <div class="about-details">
+            <p>Kontaktai</p>
+            <ul>
+                <li>Tel.nr.: 898 88 9999</li>
+                <li>Adresas: Kazkas kazkas</li>
+            </ul>
+        </div>
+    </footer>
+
+</html>

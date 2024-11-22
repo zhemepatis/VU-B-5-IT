@@ -1,0 +1,148 @@
+@media screen and (max-width: 50rem) {
+    .checkout-container {
+        display: flex;
+        flex-direction: column !important;
+
+        margin: 0;
+    }
+
+    .checkout-container > hr {
+        visibility: hidden;
+    }
+
+    article {
+        flex-direction: column;
+    }
+    
+    img {
+        width: 15rem !important;
+        height: 15rem !important;
+
+        align-self: center;
+
+        box-shadow: 0 0 !important;
+    }
+
+    .cart-items-section {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .invoice-section {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+}
+
+/* CHECKOUT CONTAINER */
+
+.checkout-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout-container h2 {
+    padding: 1rem 0;
+    margin-bottom: 0.8rem;
+
+    text-align: center;
+    background-color: #5C4033;
+    color: #fff;
+
+    box-shadow: 0 1px 3px #6D6E6A;
+}
+
+.checkout-container > hr {
+    margin: 1rem 0;
+    color: #6D6E6A;
+    opacity: .2;
+}
+
+.proceed-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 0.5rem;
+}
+
+.proceed-btn-container > button {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+
+    background-color: #5C4033;
+    color: #fff;
+    
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.proceed-btn-container > button:hover {
+    background-color: #996a54;
+}
+
+
+/* CART ITEMS SECTION */
+
+.cart-items-section {
+    width: 65%;
+    margin: 1rem;
+}
+
+article {
+    display: flex;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 1px 3px #6D6E6A;
+}
+
+article:last-child{
+    margin-bottom: 0;
+}
+
+img {
+    width: 15rem;
+    height: 15rem;
+
+    box-shadow: 1px 0 1px #6D6E6A;
+}
+
+.record-details {
+    padding: 1.5rem;
+}
+
+/* INVOICE SECTION */
+
+.invoice-section {
+    width: 35%;
+    margin: 1rem;
+}
+
+.invoice-details {
+    margin: 1rem;
+}
+
+.proceed-btn-container {
+    display:flex;
+    justify-content: right;
+}
+
+/* INVOICE TABLE */
+
+table {
+    width: 100%;
+}
+
+table, td, th, tr {
+    text-align: center;
+    border: 1px solid;
+}
+
+tfoot [colspan] {
+    text-align: right;
+    padding-right: 0.5rem;
+}

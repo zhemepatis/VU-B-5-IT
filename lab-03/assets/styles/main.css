@@ -1,8 +1,12 @@
 body {
-    max-width: 150rem;
+    margin: 0;
+    
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-h1, h2, p {
+h1, h2, h3, h4, h5, h7, p {
     margin: 0;
 }
 

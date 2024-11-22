@@ -1,6 +1,6 @@
-[o] Dokumentas privalo būti validus HTML5 dokumentas. 
-    [o] http://validator.nu
-    [o] http://validator.w3.org
+[x] Dokumentas privalo būti validus HTML5 dokumentas. 
+    [x] http://validator.nu
+    [x] http://validator.w3.org
 
 [x] Elementų išdėstymas dokumente privalo būti sumodeliuotas 
     naudojantis semantiniais HTML5 elementais
@@ -38,3 +38,35 @@
 [x] Reikia panaudoti @media taisyklę, kurios pagalba naršyklė atsižvelgtų 
     į įrenginio, kuriame yra atvaizduojamas puslapis ekrano dydį ir 
     atitinkimai pakeistų jo išdėstymą (Media Queries Level 3).
+
+
+
+Burnt Orange: #CC5500
+Mustard Yellow: #D4AF37
+Deep Brown: #5C4033
+Olive Green: #556B2F
+Maroon: #800000
+Rich Purple: #6A0DAD
+Gold: #FFD700
+Silver: #C0C0C0
+
+Hot Pink: #FF69B4
+Electric Blue: #7DF9FF
+Neon Green: #39FF14
+Purple: #800080
+Magenta: #FF00FF
+Teal: #008080
+Black: #000000
+White: #FFFFFF
+
+Vintage Black: #0A0A0A
+Vintage White: #F5F5DC (Beige for a slightly aged white look)
+Sepia Tone: #704214
+
+Deep Brown: #5C4033
+Maroon: #800000
+Rich Purple: #6A0DAD
+
+Faded Ink (Muted Grey): #6D6E6A
+Warm Amber Light: #FFBF00
+urnt Orange: #CC5500

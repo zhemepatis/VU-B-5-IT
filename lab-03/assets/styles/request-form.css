@@ -1,0 +1,63 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 1rem;
+}
+
+section h2 {
+    padding: 1rem 0;
+    margin-bottom: 0.8rem;
+
+    text-align: center;
+    background-color: #5C4033;
+    color: #fff;
+
+    box-shadow: 0 1px 3px #6D6E6A;
+}
+
+#request-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 25%;
+    margin: 1rem auto;
+}
+
+#request-form > .form-group {
+    display: inherit;
+    flex-direction: inherit;
+
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+#request-form textarea {
+    margin: 0;
+    padding: 0;
+
+    min-width: 100%;
+    max-width: 100%;
+}
+
+/* BUTTON */
+#request-form [type="submit"] {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+
+    background-color: #5C4033;
+    color: #fff;
+    
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+#request-form [type="submit"]:hover {
+    background-color: #996a54;
+}

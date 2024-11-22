@@ -1,19 +1,53 @@
+@media screen and (max-width: 50rem) {
+    nav {
+        visibility: hidden;
+    }
+
+    header {
+        display: block !important;
+    }
+
+    header > h1{
+        text-align: center;
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     height: 3rem;
-    padding: 0 1.2rem 0 1.2rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
 
-    background-color: grey;
+    background-color: #800000;
+
+    box-shadow: 0 1px 3px #6D6E6A;
+}
+
+header > h1 {
+    font-family: "Limelight", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #FFFFFF;
 }
 
 a {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+
     text-decoration: none;
-    margin-right: 0.5rem;
+    margin-right: 2rem;
+
+    color: #fff;
+}
+
+a:hover {
+    color: #9b9c97;
 }
 
 a:last-child {
-    margin-right: 0;
+    margin-right: 1rem;
 }

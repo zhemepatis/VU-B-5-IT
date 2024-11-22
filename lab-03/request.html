@@ -4,47 +4,84 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+
+        <!-- Importing google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Limelight&display=swap" rel="stylesheet">
+
+        <!-- Importing custom styles -->
         <link rel="stylesheet" href="assets/styles/main.css">
-        <link rel="stylesheet" href="assets/styles/form.css">
+        <link rel="stylesheet" href="assets/styles/navbar.css">
+        <link rel="stylesheet" href="assets/styles/request-form.css">
+        <link rel="stylesheet" href="assets/styles/footer.css">
         
         <title>Record requests</title>
     </head>
 
     <body>
-        <form id="request-form" action="post">
-            <div class="form-group">
-                <label for="request-name">Name</label>
-                <input id="request-name" type="text" name="name">
-            </div>
+        <header>
+            <h1>Vinyl records store</h1>
+            <nav>
+                <a href="file:///home/rink/repos/VU-B-5-IT/lab-03/index.html">Home</a>
+                <a href="file:///home/rink/repos/VU-B-5-IT/lab-03/about-vinyls.html">About</a>
+                <a href="/contacts">Contacts</a>
+                <a href="file:///home/rink/repos/VU-B-5-IT/lab-03/request.html">Request</a>
+            </nav>
+        </header>
 
-            <div class="form-group">
-                <label for="request-email">Email</label>
-                <input id="request-email" type="email" name="email" required>
-            </div>
+        <section>
+            <h2>Vinyl request form</h2>
 
-            <div class="form-group">
-                <label for="request-gender">Gender</label>
-                <select id="request-gender" name="gender" required>
-                    <option value="" selected>Choose gender</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="nd">Prefer not to say</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="request-text">Request</label>
-                <textarea id="request-text" name="request" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <div class="checkbox-group">
-                    <input id="request-policies" type="checkbox" name="policies" required>
-                    <label for="request-policies">By marking this checkbox you accept our policies.</label>    
+            <form id="request-form" action="post">
+                <div class="form-group">
+                    <label for="request-name">Name</label>
+                    <input id="request-name" type="text" name="name">
                 </div>
-            </div>
+    
+                <div class="form-group">
+                    <label for="request-email">Email</label>
+                    <input id="request-email" type="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="request-gender">Gender</label>
+                    <select id="request-gender" name="gender" required>
+                        <option value="" selected>Choose gender</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="nd">Prefer not to say</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="request-text">Request</label>
+                    <textarea id="request-text" name="request" required></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input id="request-policies" type="checkbox" name="policies" required>
+                        <label for="request-policies">By marking this checkbox you accept our policies.</label>    
+                    </div>
+                </div>
+    
+                <input value="Request" type="submit">
+            </form>
+        </section>
 
-            <input value="Request" type="submit">
-        </form>
+        <footer>
+            <div class="about-details">
+                <p>Kontaktai</p>
+                <ul>
+                    <li>Tel.nr.: 898 88 9999</li>
+                    <li>Adresas: Kazkas kazkas</li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
