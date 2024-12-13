@@ -18,7 +18,22 @@ function generateCanvas() {
     }
 }
 
+function resetCanvas() {
+    let canvas = $(".sudoku-canvas")
+    canvas.children(".sudoku-cell").each((_, cell) => {
+        resetCell(cell)
+    })
+}
+
+function resetCell(cell) {
+    cell.value = ""
+}
+
 
 $(document).ready(() => {
     generateCanvas()
+
+    $("#reset-canvas-btn").click(() => {
+        resetCanvas()
+    })
 })

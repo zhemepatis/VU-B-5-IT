@@ -30,6 +30,10 @@ section {
     box-sizing: border-box;
 }
 
+.sudoku-cell:focus {
+    outline: none;
+}
+
 .right-column {
     border-right: .3rem solid;
 }
