@@ -44,10 +44,38 @@ function resetCell(cell) {
         cell.value = ""
 }
 
+function validateCanvas() {
+    $(".sudoku-canvas").children().each((_, cell) => {
+        let err = validateCell(cell)
+        if (err != null)
+            console.log(err)
+    })
+}
+
+function validateCell(cell) {
+    let input = cell.value
+
+    if (input.length === 0 || input == null)
+        return "All fields must be filled."
+
+    let number = Number(input)
+    if (isNaN(number))
+        return "Non numerical input was found."
+
+    if (number < 1 || number > 9)
+        return "All numbers should in range from 1 to 9."
+
+    return null
+}
+
 $(document).ready(() => {
     fetchPuzzle()
 
-    $("#reset-canvas-btn").click(() => {
+    $("#reset-canvas-btn").click(_ => {
         resetCanvas()
+    })
+
+    $("#submit-answer-btn").click(_ => {
+        validateCanvas()
     })
 })
