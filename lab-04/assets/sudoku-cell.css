@@ -8,6 +8,10 @@ section {
     height: 100vh;
 }
 
+.controls {
+    display: none;
+}
+
 .sudoku-canvas {
     display: grid;
     grid-template-columns: repeat(9, 1fr);

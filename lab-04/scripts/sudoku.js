@@ -1,35 +1,42 @@
 function fetchPuzzle(id = 1) {
-    fetch(`https://6550e0cc7d203ab6626e476a.mockapi.io/api/v1/SudokuBoard/${id}`, {
-        method: "GET"
-    })
-    .then(res => res.json())
-    .then(puzzle => generateCanvas(puzzle.board))
+    let promise = 
+        fetch(`https://6550e0cc7d203ab6626e476a.mockapi.io/api/v1/SudokuBoard/${id}`, {
+            method: "GET"
+        })
+        .then(res => res.json())
+        .then(puzzle => generateCanvas(puzzle.board))
+
+    return promise
 }
 
 function generateCanvas(puzzle) {
-    let canvas = $(".sudoku-canvas")
+    return new Promise(resolve => {
+        let canvas = $(".sudoku-canvas")
 
-    for(let i = 0; i < 81; ++i) {
-        let cell = document.createElement("input")
-        cell.id = `sudoku-cell-${i}`
-        cell.className = "sudoku-cell"
-        cell.setAttribute("autocomplete", "off")
+        for(let i = 0; i < 81; ++i) {
+            let cell = document.createElement("input")
+            cell.id = `sudoku-cell-${i}`
+            cell.className = "sudoku-cell"
+            cell.setAttribute("autocomplete", "off")
 
-        cellCol = i % 9 
-        if ((cellCol + 1) % 3 == 0 && cellCol != 8)
-            cell.className += " right-column"
-        
-        cellRow = Math.floor(i / 9)
-        if ((cellRow + 1) % 3 == 0 && cellRow != 8)
-            cell.className += " bottom-row"
+            cellCol = i % 9 
+            if ((cellCol + 1) % 3 == 0 && cellCol != 8)
+                cell.className += " right-column"
+            
+            cellRow = Math.floor(i / 9)
+            if ((cellRow + 1) % 3 == 0 && cellRow != 8)
+                cell.className += " bottom-row"
 
-        if (puzzle[i] != "x") {
-            cell.value = puzzle[i]
-            cell.disabled = true
+            if (puzzle[i] != "x") {
+                cell.value = puzzle[i]
+                cell.disabled = true
+            }
+
+            canvas.append(cell)
         }
 
-        canvas.append(cell)
-    }
+        resolve()
+    })
 }
 
 function resetCanvas() {
@@ -70,6 +77,7 @@ function validateCell(cell) {
 
 $(document).ready(() => {
     fetchPuzzle()
+    .then(_ => $(".controls").show())
 
     $("#reset-canvas-btn").click(_ => {
         resetCanvas()
