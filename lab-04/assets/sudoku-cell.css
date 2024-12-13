@@ -24,14 +24,21 @@ section {
     width: 4rem;
 
     border: .1rem solid;
+    border-color: #000 !important;
 
     font-size: 3rem;
     text-align: center;
     box-sizing: border-box;
+    color: rgb(18, 0, 180);
 }
 
 .sudoku-cell:focus {
     outline: none;
+}
+
+.sudoku-cell:disabled {
+    background-color: rgb(243, 243, 243);
+    color: #000;
 }
 
 .right-column {
