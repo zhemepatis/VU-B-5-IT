@@ -1,10 +1,20 @@
-function fetchPuzzle(id = 1) {
+var puzzleId = 1
+
+function fetchPuzzle(id) {
+    fetch(`https://6550e0cc7d203ab6626e476a.mockapi.io/api/v1/SudokuBoard/${id}`, {
+        method: "GET"
+    })
+    .then(res => res.json())
+    .then(puzzle => generateCanvas(puzzle.board))
+    .then(_ => $(".controls").show())
+}
+
+function fetchAnswer(id) {
     let promise = 
-        fetch(`https://6550e0cc7d203ab6626e476a.mockapi.io/api/v1/SudokuBoard/${id}`, {
+        fetch(`https://6550e0cc7d203ab6626e476a.mockapi.io/api/v1/SudokuSolutions/${id}`, {
             method: "GET"
         })
         .then(res => res.json())
-        .then(puzzle => generateCanvas(puzzle.board))
 
     return promise
 }
@@ -39,6 +49,10 @@ function generateCanvas(puzzle) {
     })
 }
 
+// function prefillCanvas() {
+//     const result = 
+// }
+
 function resetCanvas() {
     let canvas = $(".sudoku-canvas")
     canvas.children(".sudoku-cell").each((_, cell) => {
@@ -70,14 +84,16 @@ function validateCell(cell) {
         return "Non numerical input was found."
 
     if (number < 1 || number > 9)
-        return "All numbers should in range from 1 to 9."
+        return "All numbers should be in range from 1 to 9."
+
+    // if (Number.isInteger(number))
+    //     return "All numbers should be integers."
 
     return null
 }
 
 $(document).ready(() => {
-    fetchPuzzle()
-    .then(_ => $(".controls").show())
+    fetchPuzzle(puzzleId)
 
     $("#reset-canvas-btn").click(_ => {
         resetCanvas()
