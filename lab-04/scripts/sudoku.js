@@ -1,17 +1,17 @@
-function generate_canvas() {
+function generateCanvas() {
     let canvas = $(".sudoku-canvas")
 
-    for(let i = 1; i < 82; ++i) {
+    for(let i = 0; i < 81; ++i) {
         let cell = document.createElement("input")
         cell.id = `sudoku-cell-${i}`
         cell.className = "sudoku-cell"
-        
-        if (i % 3 == 0 && i % 9 != 0)
+
+        cellCol = i % 9 
+        if ((cellCol + 1) % 3 == 0 && cellCol != 8)
             cell.className += " right-column"
         
-        console.log((i - 1) / 9)
-
-        if ((Math.floor((i - 1) / 9) + 1) % 3 == 0 && (Math.floor((i - 1) / 9) + 1) % 9 != 0)
+        cellRow = Math.floor(i / 9)
+        if ((cellRow + 1) % 3 == 0 && cellRow != 8)
             cell.className += " bottom-row"
 
         canvas.append(cell)
@@ -20,5 +20,5 @@ function generate_canvas() {
 
 
 $(document).ready(() => {
-    generate_canvas()
+    generateCanvas()
 })
