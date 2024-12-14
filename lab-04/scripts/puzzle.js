@@ -7,7 +7,8 @@ $(document).ready(_ => {
 
     $("#submit-answer-btn").click(_ => {
         validateCanvas()
-        .then(_ => checkAnswer())
+        .then(_ => fetchAnswer(puzzleId))
+        .then(answer => checkAnswer(answer.solution))
         .catch(err => console.log(err))
     })
 })
@@ -42,6 +43,21 @@ function generateCanvas(puzzle) {
     })
 }
 
-function checkAnswer() {
-    console.log("check answer was fired")
+function checkAnswer(solution) {
+    let promise = 
+        new Promise((resolve, reject) => {
+            let i = 0
+            $(".sudoku-canvas").children().each((_, cell) => {
+                if (cell.value !== solution[i]) {
+                    reject("Solution is incorrect.")
+                    return
+                }
+
+                ++i
+            })
+
+            resolve()
+        })
+    
+    return promise
 }
