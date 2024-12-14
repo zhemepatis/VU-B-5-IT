@@ -3,7 +3,7 @@ $(document).ready(() => {
         resetCanvas()
     })
 })
-
+ 
 function resetCanvas() {
     let canvas = $(".sudoku-canvas")
     canvas.children(".sudoku-cell").each((_, cell) => {
@@ -13,5 +13,5 @@ function resetCanvas() {
 
 function resetCell(cell) {
     if (!cell.disabled)
-        cell.value = ""
+        cell.value = null
 }
