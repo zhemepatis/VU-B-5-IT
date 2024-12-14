@@ -9,7 +9,8 @@ $(document).ready(_ => {
         validateCanvas()
         .then(_ => fetchAnswer(puzzleId))
         .then(answer => checkAnswer(answer.solution))
-        .catch(err => console.log(err))
+        .then(msg => showMessage(msg, "msg"))
+        .catch(err => showMessage(err, "err"))
     })
 })
 
@@ -56,7 +57,7 @@ function checkAnswer(solution) {
                 ++i
             })
 
-            resolve()
+            resolve("Solution is correct.")
         })
     
     return promise
